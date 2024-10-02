@@ -35,8 +35,10 @@ ingredients_list = st.multiselect(
     , my_dataframe
     , max_selections=5
 )
+
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-st.text(fruityvice_response)
+st.text(fruityvice_response.json())
+
 if ingredients_list:
     st.write(ingredients_list)
     st.text(ingredients_list)
